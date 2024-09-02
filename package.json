@@ -1,0 +1,31 @@
+{
+  "name": "@distinction-dev/serverless-lambda-recursiveloop",
+  "version": "0.0.1",
+  "description": "A Serverless Framework Plugin allowing to set RecursiveLoop property of lambda functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "serverless",
+    "aws",
+    "Serverless Plugin",
+    "Lambda recursiveloop",
+    "recursiveloop"
+  ],
+  "license": "MIT",
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "dependencies": {
+    "semantic-release": "^19.0.5"
+  },
+  "peerDependencies": {
+    "serverless": "<4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
