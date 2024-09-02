@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Serverless Plugin to add a `RecursiveLoop` property to AWS Lambda functions.
@@ -22,6 +22,19 @@ class ServerlessRecursiveLoopPlugin {
     this.hooks = {
       "package:compileFunctions": this.addRecursiveLoopProperty.bind(this),
     };
+    if (
+      this.serverless.configSchemaHandler &&
+      this.serverless.configSchemaHandler.defineFunctionProperties
+    ) {
+      this.serverless.configSchemaHandler.defineFunctionProperties("aws", {
+        properties: {
+          recursiveLoop: {
+            type: "string",
+            enum: ["Allow", "Terminate"],
+          },
+        },
+      });
+    }
   }
 
   /**
@@ -43,10 +56,6 @@ class ServerlessRecursiveLoopPlugin {
               this.provider.naming.getLambdaLogicalId(functionName)
             ];
           functionResource.Properties.RecursiveLoop = recursiveLoop;
-        } else {
-          this.serverless.cli.log(
-            `Invalid RecursiveLoop value in function ${functionName}. Allowed values are 'Allow' or 'Terminate'.`
-          );
         }
       }
     }
