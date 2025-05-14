@@ -1,6 +1,6 @@
 {
   "name": "@distinction-dev/serverless-lambda-recursiveloop",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Serverless Framework Plugin allowing to set RecursiveLoop property of lambda functions",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
       "main"
     ]
   },
-  "dependencies": {
+  "devDependencies": {
     "semantic-release": "^19.0.5"
   },
   "peerDependencies": {
