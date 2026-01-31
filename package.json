@@ -20,7 +20,7 @@
     ]
   },
   "dependencies": {
-    "semantic-release": "^19.0.5"
+    "semantic-release": "^25.0.2"
   },
   "peerDependencies": {
     "serverless": "<4.0.0"
